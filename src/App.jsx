@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { allQuestions, DIFFICULTIES, topics } from './data/questions'
+import quizBank from './data/quizzes.json'
+import { makeQuiz } from './lib/quiz'
 import Icon from './components/Icons'
 import QuestionCard from './components/QuestionCard'
+import QuizResults from './components/QuizResults'
+import QuizSetup from './components/QuizSetup'
+import QuizView from './components/QuizView'
 import Sidebar from './components/Sidebar'
 
 const REVIEW_KEY = 'prepdeck:reviewed'
@@ -60,6 +65,12 @@ export default function App() {
   const [expanded, setExpanded] = useState(() => new Set())
   const [hideReviewed, setHideReviewed] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [quizSetupOpen, setQuizSetupOpen] = useState(false)
+  const [quizTopicIds, setQuizTopicIds] = useState([])
+  const [quizMode, setQuizMode] = useState('study') // study | quiz | results
+  const [quizQuestions, setQuizQuestions] = useState([])
+  const [quizAnswers, setQuizAnswers] = useState({})
+  const [quizIndex, setQuizIndex] = useState(0)
   const searchRef = useRef(null)
 
   const activeTopic = topics.find((t) => t.id === activeTopicId) || topics[0]
@@ -85,6 +96,7 @@ export default function App() {
   // Keyboard shortcuts: Cmd/Ctrl+K or "/" focus search, Escape clears.
   useEffect(() => {
     function onKeyDown(e) {
+      if (!searchRef.current) return
       const tag = document.activeElement?.tagName
       const typing = tag === 'INPUT' || tag === 'TEXTAREA'
       if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing)) {
@@ -187,6 +199,11 @@ export default function App() {
     setDifficulty('All')
     setExpanded(new Set())
     setSidebarOpen(false)
+    setQuizSetupOpen(false)
+    setQuizMode('study')
+    setQuizQuestions([])
+    setQuizAnswers({})
+    setQuizIndex(0)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -194,6 +211,59 @@ export default function App() {
     if (window.confirm('Reset all reviewed questions? This cannot be undone.')) {
       setReviewed(new Set())
     }
+  }
+
+  function topicNameFor(id) {
+    return topics.find((topic) => topic.id === id)?.name || 'Topic'
+  }
+
+  function openQuizSetup() {
+    setQuizTopicIds((prev) => (prev.length ? prev : [activeTopicId]))
+    setQuizSetupOpen(true)
+  }
+
+  function toggleQuizTopic(id) {
+    setQuizTopicIds((prev) =>
+      prev.includes(id) ? prev.filter((topicId) => topicId !== id) : [...prev, id],
+    )
+  }
+
+  function startQuiz() {
+    const questions = makeQuiz(quizBank, quizTopicIds)
+    if (!questions.length) return
+    setQuizQuestions(questions)
+    setQuizAnswers({})
+    setQuizIndex(0)
+    setQuizSetupOpen(false)
+    setQuizMode('quiz')
+    setSidebarOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  function selectQuizAnswer(questionId, optionIndex) {
+    setQuizAnswers((prev) => ({ ...prev, [questionId]: optionIndex }))
+  }
+
+  function navigateQuiz(nextIndex) {
+    setQuizIndex(Math.min(Math.max(nextIndex, 0), quizQuestions.length - 1))
+  }
+
+  function finishQuiz() {
+    setQuizMode('results')
+    setSidebarOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  function exitQuiz() {
+    if (quizMode === 'quiz' && Object.keys(quizAnswers).length > 0) {
+      const confirmed = window.confirm('Exit this quiz? Your answers will be lost.')
+      if (!confirmed) return
+    }
+    setQuizMode('study')
+    setQuizQuestions([])
+    setQuizAnswers({})
+    setQuizIndex(0)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const heroQuestions = activeTopic.questions
@@ -214,6 +284,7 @@ export default function App() {
         onReset={resetProgress}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
+        onOpenQuiz={openQuizSetup}
       />
 
       <div className="main">
@@ -227,41 +298,60 @@ export default function App() {
             <Icon name="menu" size={20} />
           </button>
 
-          <div className={`search ${isSearching ? 'has-value' : ''}`}>
-            <Icon name="search" size={17} />
-            <input
-              ref={searchRef}
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search questions, answers, topics…"
-              aria-label="Search questions"
-            />
-            {query ? (
-              <button
-                type="button"
-                className="search-clear"
-                onClick={() => {
-                  setQuery('')
-                  searchRef.current?.focus()
-                }}
-                aria-label="Clear search"
-              >
-                <Icon name="close" size={14} />
-              </button>
-            ) : (
-              <span className="kbd-hint">
-                <kbd>⌘</kbd>
-                <kbd>K</kbd>
-              </span>
-            )}
-          </div>
+          {quizMode === 'study' ? (
+            <div className={`search ${isSearching ? 'has-value' : ''}`}>
+              <Icon name="search" size={17} />
+              <input
+                ref={searchRef}
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search questions, answers, topics…"
+                aria-label="Search questions"
+              />
+              {query ? (
+                <button
+                  type="button"
+                  className="search-clear"
+                  onClick={() => {
+                    setQuery('')
+                    searchRef.current?.focus()
+                  }}
+                  aria-label="Clear search"
+                >
+                  <Icon name="close" size={14} />
+                </button>
+              ) : (
+                <span className="kbd-hint">
+                  <kbd>⌘</kbd>
+                  <kbd>K</kbd>
+                </span>
+              )}
+            </div>
+          ) : (
+            <div className="quiz-context">
+              <Icon name={quizMode === 'quiz' ? 'target' : 'trophy'} size={16} />
+              <span>{quizMode === 'quiz' ? 'Practice quiz' : 'Quiz results'}</span>
+            </div>
+          )}
 
           <div className="topbar-actions">
-            <button type="button" className="ghost-btn" onClick={pickRandom} disabled={!visibleQuestions.length}>
-              <Icon name="shuffle" size={16} />
-              <span className="btn-label">Random</span>
-            </button>
+            {quizMode === 'study' ? (
+              <button
+                type="button"
+                className="ghost-btn"
+                onClick={pickRandom}
+                disabled={!visibleQuestions.length}
+              >
+                <Icon name="shuffle" size={16} />
+                <span className="btn-label">Random</span>
+              </button>
+            ) : (
+              <button type="button" className="ghost-btn" onClick={exitQuiz}>
+                <Icon name="arrowLeft" size={15} />
+                <span className="btn-label">Exit quiz</span>
+              </button>
+            )}
             <button
               type="button"
               className="icon-btn theme-btn"
@@ -274,6 +364,28 @@ export default function App() {
         </header>
 
         <main className="content">
+          {quizMode === 'quiz' ? (
+            <QuizView
+              questions={quizQuestions}
+              answers={quizAnswers}
+              index={quizIndex}
+              topicNameFor={topicNameFor}
+              onSelect={selectQuizAnswer}
+              onNavigate={navigateQuiz}
+              onFinish={finishQuiz}
+              onExit={exitQuiz}
+            />
+          ) : quizMode === 'results' ? (
+            <QuizResults
+              questions={quizQuestions}
+              answers={quizAnswers}
+              topicNameFor={topicNameFor}
+              onRetake={startQuiz}
+              onChangeTopics={() => setQuizSetupOpen(true)}
+              onExit={exitQuiz}
+            />
+          ) : (
+            <>
           {isSearching ? (
             <section className="search-head">
               <div className="eyebrow">Search results</div>
@@ -422,19 +534,36 @@ export default function App() {
               {topics.length} topics · {allQuestions.length} questions
             </span>
           </footer>
+            </>
+          )}
         </main>
       </div>
 
-      <button
-        type="button"
-        className="fab"
-        onClick={pickRandom}
-        disabled={!visibleQuestions.length}
-        aria-label="Pick a random question"
-        title="Pick a random question"
-      >
-        <Icon name="shuffle" size={20} />
-      </button>
+      {quizMode === 'study' && (
+        <button
+          type="button"
+          className="fab"
+          onClick={pickRandom}
+          disabled={!visibleQuestions.length}
+          aria-label="Pick a random question"
+          title="Pick a random question"
+        >
+          <Icon name="shuffle" size={20} />
+        </button>
+      )}
+
+      {quizSetupOpen && (
+        <QuizSetup
+          topics={topics}
+          bank={quizBank}
+          selected={quizTopicIds}
+          onToggle={toggleQuizTopic}
+          onSelectAll={() => setQuizTopicIds(topics.map((topic) => topic.id))}
+          onClear={() => setQuizTopicIds([])}
+          onStart={startQuiz}
+          onClose={() => setQuizSetupOpen(false)}
+        />
+      )}
     </div>
   )
 }

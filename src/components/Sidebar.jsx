@@ -10,6 +10,7 @@ export default function Sidebar({
   onReset,
   open,
   onClose,
+  onOpenQuiz,
 }) {
   const percent = totalCount ? Math.round((reviewCount / totalCount) * 100) : 0
 
@@ -38,6 +39,17 @@ export default function Sidebar({
             <Icon name="close" size={18} />
           </button>
         </div>
+
+        <button type="button" className="quiz-cta" onClick={onOpenQuiz}>
+          <span className="quiz-cta-icon">
+            <Icon name="spark" size={17} />
+          </span>
+          <span className="quiz-cta-copy">
+            <strong>Generate quiz</strong>
+            <small>5 MCQs · your topics</small>
+          </span>
+          <Icon name="chevron" size={15} className="quiz-cta-arrow" />
+        </button>
 
         <div className="side-label">Topics</div>
         <nav className="topic-nav" aria-label="Topics">

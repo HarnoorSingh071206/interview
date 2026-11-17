@@ -124,6 +124,15 @@ const paths = {
       <path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5" />
     </>
   ),
+  play: <path d="M7 4.5v15l13-7.5Z" />,
+  trophy: (
+    <>
+      <path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" />
+      <path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4" />
+      <path d="M12 13v4M8.5 21h7M9.5 17.5h5v3.5h-5z" />
+    </>
+  ),
+  arrowLeft: <path d="M19 12H5M11 18l-6-6 6-6" />,
 }
 
 export default function Icon({ name, size = 18, className = '', strokeWidth = 1.8 }) {

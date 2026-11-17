@@ -1,0 +1,1022 @@
+{
+  "html": [
+    {
+      "id": "html-1",
+      "question": "Which element should wrap the primary content of a page?",
+      "options": ["<header>", "<main>", "<section>", "<aside>"],
+      "answer": 1,
+      "explanation": "<main> represents the dominant content of the document and should appear once per page. <header>, <section> and <aside> describe other parts of the page."
+    },
+    {
+      "id": "html-2",
+      "question": "What is the main purpose of the alt attribute on an image?",
+      "options": [
+        "It sets the image tooltip on hover",
+        "It provides a text alternative for screen readers and failed loads",
+        "It defines the image dimensions",
+        "It caches the image in the browser"
+      ],
+      "answer": 1,
+      "explanation": "alt provides a textual alternative that assistive technology can read and that browsers show if the image fails to load. The title attribute is what usually shows a tooltip."
+    },
+    {
+      "id": "html-3",
+      "question": "Which of these elements is block-level by default?",
+      "options": ["<span>", "<a>", "<div>", "<img>"],
+      "answer": 2,
+      "explanation": "<div> is a block-level container, so it starts on a new line and takes the available width. <span>, <a> and <img> are inline by default."
+    },
+    {
+      "id": "html-4",
+      "question": "How does the defer attribute change a script's execution?",
+      "options": [
+        "It downloads and executes the script immediately",
+        "It downloads in parallel and executes after HTML parsing, in document order",
+        "It executes the script only after a user interaction",
+        "It prevents the script from loading until the page is idle"
+      ],
+      "answer": 1,
+      "explanation": "deferred scripts are fetched in parallel with parsing but run after the document is parsed, preserving their order. async scripts also download in parallel but run as soon as they are ready."
+    },
+    {
+      "id": "html-5",
+      "question": "Which element is the most semantic choice for a set of navigation links?",
+      "options": ["<menu>", "<nav>", "<section>", "<div>"],
+      "answer": 1,
+      "explanation": "<nav> identifies a major block of navigation links and helps screen-reader users jump to it. A plain <div> carries no meaning."
+    },
+    {
+      "id": "html-6",
+      "question": "Which input type gives built-in email validation on modern browsers?",
+      "options": ["type=\"text\"", "type=\"email\"", "type=\"mail\"", "type=\"string\""],
+      "answer": 1,
+      "explanation": "input type=\"email\" triggers the browser's email format validation and often shows an email-optimised keyboard on mobile. There is no type=\"mail\"."
+    },
+    {
+      "id": "html-7",
+      "question": "What does <label for=\"email\"> do?",
+      "options": [
+        "Styles the input with the id email",
+        "Associates the label with the element whose id is email",
+        "Creates a new input named email",
+        "Makes the field required"
+      ],
+      "answer": 1,
+      "explanation": "The for attribute must match the input's id. This links the label to the field so clicking the label focuses it and screen readers announce the label with the input."
+    },
+    {
+      "id": "html-8",
+      "question": "Which attribute makes a form field mandatory before submission?",
+      "options": ["validate", "mandatory", "required", "needed"],
+      "answer": 2,
+      "explanation": "The boolean required attribute enables native validation and blocks form submission until the field has a value. Server-side validation is still needed."
+    },
+    {
+      "id": "html-9",
+      "question": "How should you mark an image that is purely decorative?",
+      "options": [
+        "alt=\"decorative image\"",
+        "Give it an empty alt=\"\"",
+        "Remove the alt attribute entirely",
+        "Add aria-hidden=\"false\""
+      ],
+      "answer": 1,
+      "explanation": "An empty alt tells assistive technology to skip the image because it adds no information. Omitting alt entirely can cause screen readers to announce the file name."
+    },
+    {
+      "id": "html-10",
+      "question": "What is the viewport meta tag used for?",
+      "options": [
+        "Blocking search engine crawlers",
+        "Setting the page title",
+        "Making the layout match the device width for responsive design",
+        "Preloading web fonts"
+      ],
+      "answer": 2,
+      "explanation": "meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" tells mobile browsers to use the device width as the layout viewport, which is essential for responsive CSS."
+    }
+  ],
+  "javascript": [
+    {
+      "id": "javascript-1",
+      "question": "Which declaration is block-scoped and cannot be reassigned?",
+      "options": ["var", "let", "const", "function"],
+      "answer": 2,
+      "explanation": "const is block-scoped and prevents reassignment of the binding. Note that objects and arrays declared with const can still be mutated."
+    },
+    {
+      "id": "javascript-2",
+      "question": "What does typeof null return?",
+      "options": ["\"null\"", "\"undefined\"", "\"object\"", "\"boolean\""],
+      "answer": 2,
+      "explanation": "typeof null returns \"object\" because of a long-standing historical bug in JavaScript that cannot be fixed without breaking the web."
+    },
+    {
+      "id": "javascript-3",
+      "question": "What is the result of 1 == \"1\" and 1 === \"1\"?",
+      "options": ["true and true", "true and false", "false and false", "false and true"],
+      "answer": 1,
+      "explanation": "== performs type coercion, so the string is converted to a number and the comparison is true. === compares value and type, so a number and a string are not equal."
+    },
+    {
+      "id": "javascript-4",
+      "question": "What does [1, 2, 3].map(n => n * 2) return?",
+      "options": ["[1, 2, 3]", "[2, 4, 6]", "12", "[2, 4, 6, 8]"],
+      "answer": 1,
+      "explanation": "map creates a new array by applying the callback to every element. The original array is not modified."
+    },
+    {
+      "id": "javascript-5",
+      "question": "Which callbacks run first after the current synchronous code finishes?",
+      "options": ["setTimeout callbacks", "Promise callbacks", "DOM events", "setInterval callbacks"],
+      "answer": 1,
+      "explanation": "Promise callbacks go to the microtask queue, which is drained completely before the browser handles the next macrotask such as timers or UI events."
+    },
+    {
+      "id": "javascript-6",
+      "question": "What is a closure?",
+      "options": [
+        "A function that runs only once",
+        "A function that retains access to its lexical scope after the outer function returns",
+        "A way to close the browser tab",
+        "A method that freezes an object"
+      ],
+      "answer": 1,
+      "explanation": "A closure is formed when a function references variables from its lexical scope. Those variables stay alive even after the outer function has finished executing."
+    },
+    {
+      "id": "javascript-7",
+      "question": "How does the this keyword behave inside an arrow function?",
+      "options": [
+        "It always refers to the global object",
+        "It is set by the call site of the arrow function",
+        "It is captured lexically from the surrounding scope",
+        "It is always undefined"
+      ],
+      "answer": 2,
+      "explanation": "Arrow functions do not have their own this. They capture the this value of the enclosing scope, which makes them convenient for callbacks inside methods."
+    },
+    {
+      "id": "javascript-8",
+      "question": "Which modern API creates a deep copy of many built-in values, including Maps and Dates?",
+      "options": ["Object.assign", "JSON.parse(JSON.stringify(x))", "structuredClone", "Object.create"],
+      "answer": 2,
+      "explanation": "structuredClone performs a deep clone and supports Dates, Maps, Sets and cycles. Object.assign is shallow, and the JSON round-trip loses types such as Date."
+    },
+    {
+      "id": "javascript-9",
+      "question": "What is debounce used for?",
+      "options": [
+        "Running a function at most once per fixed interval",
+        "Waiting until events stop before running a function",
+        "Running a function immediately on every event",
+        "Caching the return value of a function"
+      ],
+      "answer": 1,
+      "explanation": "Debounce resets a timer on every event, so the function runs only after events have stopped for the delay. Throttle limits execution to once per interval."
+    },
+    {
+      "id": "javascript-10",
+      "question": "Event delegation relies on which browser behaviour?",
+      "options": ["Event capturing only", "Event bubbling", "Microtasks", "CSS specificity"],
+      "answer": 1,
+      "explanation": "A listener on a parent can handle events from children because events bubble upward. The handler inspects event.target or closest() to identify the actual source."
+    }
+  ],
+  "react": [
+    {
+      "id": "react-1",
+      "question": "What does the useState hook return?",
+      "options": [
+        "Only the current state value",
+        "An object with value and setValue properties",
+        "An array containing the current value and a setter function",
+        "A ref object"
+      ],
+      "answer": 2,
+      "explanation": "useState returns a pair: the current state and a setter function. Arrays are used so the names can be chosen freely with destructuring."
+    },
+    {
+      "id": "react-2",
+      "question": "What is the return value of a useEffect callback used for?",
+      "options": [
+        "Returning JSX to render",
+        "Storing the previous state",
+        "Running cleanup when the effect re-runs or the component unmounts",
+        "Skipping the next render"
+      ],
+      "answer": 2,
+      "explanation": "If the effect returns a function, React calls it before the next run of the effect and on unmount. It is used to clear timers, subscriptions and listeners."
+    },
+    {
+      "id": "react-3",
+      "question": "Why does React need a key prop on list items?",
+      "options": [
+        "To style each item uniquely",
+        "To identify which items changed, moved or were removed",
+        "To sort the list automatically",
+        "To make the list scrollable"
+      ],
+      "answer": 1,
+      "explanation": "Keys allow React's reconciliation algorithm to match elements between renders and reuse the correct DOM nodes and state. Stable IDs are better than array indexes."
+    },
+    {
+      "id": "react-4",
+      "question": "What happens when a component's state changes with a setter?",
+      "options": [
+        "The browser reloads the page",
+        "Only that variable changes silently",
+        "React schedules a re-render of the component",
+        "The component is permanently destroyed"
+      ],
+      "answer": 2,
+      "explanation": "Calling a state setter schedules an update. React re-renders the component with the new state and then reconciles the changes into the DOM."
+    },
+    {
+      "id": "react-5",
+      "question": "What is useMemo used for?",
+      "options": [
+        "Memoising an expensive computed value between renders",
+        "Creating a mutable ref",
+        "Running side effects",
+        "Storing form data in the DOM"
+      ],
+      "answer": 0,
+      "explanation": "useMemo caches the result of a calculation until its dependencies change. It is an optimisation, not a guarantee, and should be used for expensive work."
+    },
+    {
+      "id": "react-6",
+      "question": "Which statement about props is true?",
+      "options": [
+        "A child component should mutate props directly",
+        "Props are read-only data passed from parent to child",
+        "Props can only be strings",
+        "Props are private to the component that declares them"
+      ],
+      "answer": 1,
+      "explanation": "Props flow one way, from parent to child, and must be treated as immutable. To change data, a child calls a callback or the owner updates its state."
+    },
+    {
+      "id": "react-7",
+      "question": "What makes an input a controlled component?",
+      "options": [
+        "Using a ref to read its value on submit",
+        "Setting its value from state and updating that state on change",
+        "Giving it a name attribute",
+        "Placing it inside a form"
+      ],
+      "answer": 1,
+      "explanation": "A controlled input's value comes from React state via the value prop, and every change flows through onChange. This keeps React as the single source of truth."
+    },
+    {
+      "id": "react-8",
+      "question": "What problem does React Context primarily solve?",
+      "options": [
+        "Slow network requests",
+        "Passing data through many intermediate components (prop drilling)",
+        "Bundle size",
+        "Server-side rendering"
+      ],
+      "answer": 1,
+      "explanation": "Context lets a provider expose a value to any descendant without threading props through every level. It is best suited to app-wide concerns like theme or auth."
+    },
+    {
+      "id": "react-9",
+      "question": "Which is true about updating useRef.current?",
+      "options": [
+        "It triggers a re-render",
+        "It does not trigger a re-render",
+        "It resets all component state",
+        "It only works during effects"
+      ],
+      "answer": 1,
+      "explanation": "A ref is a mutable box that persists across renders. Changing current does not cause a render, so refs are used for DOM nodes, timers and other non-visual values."
+    },
+    {
+      "id": "react-10",
+      "question": "What is the main rule for calling hooks?",
+      "options": [
+        "Call them inside loops to reuse logic",
+        "Call them at the top level of a component or another hook",
+        "Call them only inside event handlers",
+        "Call them only once per application"
+      ],
+      "answer": 1,
+      "explanation": "Hooks must run in the same order on every render. That is why they cannot be called conditionally, in loops or in nested functions. Custom hooks also start with use."
+    }
+  ],
+  "css": [
+    {
+      "id": "css-1",
+      "question": "Which property creates space inside an element's border?",
+      "options": ["margin", "padding", "border-spacing", "gap"],
+      "answer": 1,
+      "explanation": "Padding is the space between the content and the border. Margin is the space outside the border, between the element and its neighbours."
+    },
+    {
+      "id": "css-2",
+      "question": "What does box-sizing: border-box change?",
+      "options": [
+        "It removes the border from the element",
+        "It makes width and height include padding and border",
+        "It forces the element to be square",
+        "It adds margin inside the element"
+      ],
+      "answer": 1,
+      "explanation": "With border-box, the declared width includes content, padding and border, making layouts much easier to predict. The default is content-box."
+    },
+    {
+      "id": "css-3",
+      "question": "Which selector has the highest specificity?",
+      "options": ["A class selector", "An ID selector", "A type selector", "A universal selector"],
+      "answer": 1,
+      "explanation": "IDs outrank classes, attributes and pseudo-classes, which in turn outrank element selectors. Inline styles and !important sit above normal declarations."
+    },
+    {
+      "id": "css-4",
+      "question": "What is the default flex-direction in a flex container?",
+      "options": ["column", "row", "row-reverse", "column-reverse"],
+      "answer": 1,
+      "explanation": "The default is row, so items are laid out horizontally along the main axis. Use flex-direction: column when the main axis should be vertical."
+    },
+    {
+      "id": "css-5",
+      "question": "Which position value removes an element from normal flow and positions it against the nearest positioned ancestor?",
+      "options": ["relative", "fixed", "absolute", "sticky"],
+      "answer": 2,
+      "explanation": "absolute takes the element out of flow and positions it relative to the closest ancestor with a non-static position, or the initial containing block if none exists."
+    },
+    {
+      "id": "css-6",
+      "question": "Which unit is relative to the root element's font size?",
+      "options": ["px", "em", "rem", "vh"],
+      "answer": 2,
+      "explanation": "rem means root em, so it is based on the html element's font size. em is based on the element's own or parent's font size and compounds when nested."
+    },
+    {
+      "id": "css-7",
+      "question": "Which of these creates a new stacking context?",
+      "options": ["color: red", "opacity: 0.5", "font-weight: 700", "margin: 10px"],
+      "answer": 1,
+      "explanation": "An opacity below 1 creates a stacking context, as do transforms, filters and positioned children with z-index. This affects how z-index is compared."
+    },
+    {
+      "id": "css-8",
+      "question": "What is the difference between display: none and visibility: hidden?",
+      "options": [
+        "They are identical",
+        "display: none removes the element from layout, while visibility: hidden keeps its space",
+        "visibility: hidden removes the element from layout, while display: none keeps its space",
+        "Only visibility: hidden hides content from screen readers"
+      ],
+      "answer": 1,
+      "explanation": "display: none removes the box entirely, so surrounding content reflows. visibility: hidden keeps the element's space but does not paint it."
+    },
+    {
+      "id": "css-9",
+      "question": "Which pseudo-element inserts generated content before an element's content?",
+      "options": [":before", "::before", "::first-line", ":hover"],
+      "answer": 1,
+      "explanation": "::before (double colon) is a pseudo-element used with the content property. Single-colon :before is legacy syntax. :hover is a pseudo-class."
+    },
+    {
+      "id": "css-10",
+      "question": "Which feature lets a component respond to the width of its parent rather than the viewport?",
+      "options": ["Media queries", "Container queries", "CSS variables", "Flexbox"],
+      "answer": 1,
+      "explanation": "Container queries use @container and require container-type on the parent. They make components truly reusable because they adapt to their container's size."
+    }
+  ],
+  "tailwind": [
+    {
+      "id": "tailwind-1",
+      "question": "Which utility applies 1rem of padding on all sides with the default scale?",
+      "options": ["p-1", "p-2", "p-4", "p-8"],
+      "answer": 2,
+      "explanation": "In Tailwind's default spacing scale, p-4 equals 1rem (16px). p-2 is 0.5rem and p-8 is 2rem."
+    },
+    {
+      "id": "tailwind-2",
+      "question": "What does the md: prefix mean in md:flex?",
+      "options": [
+        "Apply flex only below the md breakpoint",
+        "Apply flex at the md breakpoint and above",
+        "Apply flex on medium-sized text only",
+        "Apply a medium amount of flex"
+      ],
+      "answer": 1,
+      "explanation": "Tailwind is mobile-first, so unprefixed utilities apply everywhere and md: utilities apply from the md breakpoint upward until overridden."
+    },
+    {
+      "id": "tailwind-3",
+      "question": "Which variant applies a utility only while the pointer is over the element?",
+      "options": ["focus:", "active:", "hover:", "group-hover:"],
+      "answer": 2,
+      "explanation": "hover: targets the hovered element itself. focus: is for keyboard or programmatic focus and active: applies while a control is being pressed."
+    },
+    {
+      "id": "tailwind-4",
+      "question": "How does Tailwind avoid shipping unused CSS?",
+      "options": [
+        "It downloads only classes used at runtime from a server",
+        "It scans source files for class names and generates only those utilities",
+        "It removes unused CSS in the browser after load",
+        "It requires every class to be written in a config file"
+      ],
+      "answer": 1,
+      "explanation": "Tailwind scans template files for class names and emits only the matching utilities. That is why complete class names must appear statically in the source."
+    },
+    {
+      "id": "tailwind-5",
+      "question": "Which is the correct Tailwind arbitrary value for a width of 327px?",
+      "options": ["w-327", "w-[327px]", "width-327px", "w(327px)"],
+      "answer": 1,
+      "explanation": "Square brackets introduce arbitrary values: w-[327px]. Arbitrary values are useful for one-offs but repeated values should become theme tokens."
+    },
+    {
+      "id": "tailwind-6",
+      "question": "How do you enable class-based dark mode in Tailwind v4?",
+      "options": [
+        "Set darkMode: true in package.json",
+        "Add @custom-variant dark (&:where(.dark, .dark *)); to the CSS",
+        "Use the dark utility without configuration",
+        "Import a dark.css file"
+      ],
+      "answer": 1,
+      "explanation": "This custom variant makes dark: respond to a .dark class on an ancestor. You then toggle that class on the html element. By default dark: follows prefers-color-scheme."
+    },
+    {
+      "id": "tailwind-7",
+      "question": "What does flex md:flex-col do?",
+      "options": [
+        "Always lays items out in a column",
+        "Lays items out in a row, then in a column from md upward",
+        "Lays items out in a column, then in a row from md upward",
+        "Makes the items flex only on md screens"
+      ],
+      "answer": 1,
+      "explanation": "The base utility applies first, so the container is a row. md:flex-col overrides the direction at the md breakpoint and above."
+    },
+    {
+      "id": "tailwind-8",
+      "question": "What is @apply used for?",
+      "options": [
+        "Applying JavaScript logic to a component",
+        "Inlining existing Tailwind utilities into a custom CSS rule",
+        "Installing Tailwind plugins",
+        "Applying styles only on hover"
+      ],
+      "answer": 1,
+      "explanation": "@apply lets you reuse utilities inside custom CSS. Prefer extracting a component instead, because @apply hides styles from the markup and can bloat CSS."
+    },
+    {
+      "id": "tailwind-9",
+      "question": "Why does className={'text-' + color + '-500'} often fail to generate a class?",
+      "options": [
+        "Tailwind cannot parse JSX",
+        "The full class name never appears statically, so the scanner cannot detect it",
+        "Template literals are not allowed in React",
+        "text-500 is not a valid utility"
+      ],
+      "answer": 1,
+      "explanation": "Tailwind's scanner looks for complete class strings. If the name is assembled dynamically it cannot see it. Use conditional branches with full class names or a safelist."
+    },
+    {
+      "id": "tailwind-10",
+      "question": "Which utility centers flex items along the main axis?",
+      "options": ["items-center", "justify-center", "content-center", "text-center"],
+      "answer": 1,
+      "explanation": "justify-content works along the main axis, so justify-center centers items horizontally in a row. items-center aligns items along the cross axis."
+    }
+  ],
+  "nextjs": [
+    {
+      "id": "nextjs-1",
+      "question": "What is Next.js built on top of?",
+      "options": ["Angular", "Vue", "React", "Svelte"],
+      "answer": 2,
+      "explanation": "Next.js is a React framework by Vercel. It adds routing, rendering strategies, data fetching and optimisation on top of React."
+    },
+    {
+      "id": "nextjs-2",
+      "question": "In the App Router, which file defines the UI for a route segment?",
+      "options": ["index.jsx", "page.jsx", "route.jsx", "view.jsx"],
+      "answer": 1,
+      "explanation": "Folders define URL segments and page.jsx renders that segment's UI. layout.jsx wraps pages and persists across navigation."
+    },
+    {
+      "id": "nextjs-3",
+      "question": "What does the 'use client' directive do?",
+      "options": [
+        "Marks a component to run only in the browser with no server rendering",
+        "Marks a boundary where React Client Components run, enabling state and effects",
+        "Disables caching for the route",
+        "Turns a component into an API route"
+      ],
+      "answer": 1,
+      "explanation": "In the App Router components are Server Components by default. 'use client' marks a module and its imported children as Client Components so they can use hooks, events and browser APIs."
+    },
+    {
+      "id": "nextjs-4",
+      "question": "What is server-side rendering (SSR)?",
+      "options": [
+        "Generating HTML at build time only",
+        "Generating HTML on the server for each request",
+        "Rendering only in the browser",
+        "Caching static files on a CDN"
+      ],
+      "answer": 1,
+      "explanation": "SSR produces HTML per request, so users and crawlers receive a rendered page immediately. It suits personalised or frequently changing data."
+    },
+    {
+      "id": "nextjs-5",
+      "question": "What does incremental static regeneration (ISR) allow?",
+      "options": [
+        "Static pages that revalidate in the background after a time interval",
+        "Streaming only client components",
+        "Automatic database migrations",
+        "Rendering a page only once at build time"
+      ],
+      "answer": 0,
+      "explanation": "ISR serves a static page and regenerates it in the background after the revalidate interval, combining static speed with fresher data."
+    },
+    {
+      "id": "nextjs-6",
+      "question": "What does next/image provide automatically?",
+      "options": [
+        "Image editing tools",
+        "Lazy loading, responsive sizing and modern formats",
+        "Automatic alt text generation",
+        "Unlimited free image hosting"
+      ],
+      "answer": 1,
+      "explanation": "next/image optimises images with lazy loading, responsive srcset, modern formats and layout-shift prevention. You still must provide meaningful alt text."
+    },
+    {
+      "id": "nextjs-7",
+      "question": "Which folder name creates a dynamic route in the App Router?",
+      "options": ["{slug}", ":slug", "[slug]", "$slug"],
+      "answer": 2,
+      "explanation": "app/blog/[slug]/page.jsx matches /blog/anything and exposes the value through the params prop. [...slug] creates a catch-all route."
+    },
+    {
+      "id": "nextjs-8",
+      "question": "What does the 'use server' directive mark?",
+      "options": [
+        "A component that runs on the client",
+        "A server action that can be called from the client",
+        "A static asset folder",
+        "A route that bypasses middleware"
+      ],
+      "answer": 1,
+      "explanation": "Server Actions are async functions marked with 'use server'. The client can call them directly, typically from forms, and they run on the server."
+    },
+    {
+      "id": "nextjs-9",
+      "question": "What is special about layout.jsx in the App Router?",
+      "options": [
+        "It can only be used at the root",
+        "It persists across navigation within its segment and does not re-render",
+        "It replaces page.jsx",
+        "It only works in Client Components"
+      ],
+      "answer": 1,
+      "explanation": "Layouts wrap pages and nested segments. They preserve their state and do not re-render on navigation inside that segment, which is ideal for shared navigation."
+    },
+    {
+      "id": "nextjs-10",
+      "question": "How do Server Components typically fetch data in the App Router?",
+      "options": [
+        "With useEffect and useState",
+        "By awaiting fetch or a database call directly in the async component",
+        "Only through Redux",
+        "With jQuery AJAX"
+      ],
+      "answer": 1,
+      "explanation": "Server Components can be async, so they await fetch or a database query directly. This avoids client-side waterfalls and keeps secrets on the server."
+    }
+  ],
+  "git": [
+    {
+      "id": "git-1",
+      "question": "Which command creates and switches to a new branch?",
+      "options": ["git branch new-branch", "git switch -c new-branch", "git checkout new-branch", "git merge new-branch"],
+      "answer": 1,
+      "explanation": "git switch -c creates the branch and checks it out in one step. git branch only creates it, and git checkout new-branch fails if the branch does not exist."
+    },
+    {
+      "id": "git-2",
+      "question": "What does git add do?",
+      "options": [
+        "Commits the changes immediately",
+        "Stages changes for the next commit",
+        "Pushes changes to GitHub",
+        "Creates a new branch"
+      ],
+      "answer": 1,
+      "explanation": "git add moves changes from the working directory into the staging area. git commit then records the staged snapshot."
+    },
+    {
+      "id": "git-3",
+      "question": "What is the difference between Git and GitHub?",
+      "options": [
+        "They are the same product",
+        "Git is a local version-control system; GitHub hosts Git repositories online",
+        "GitHub is a Git command-line tool",
+        "Git only works with GitHub"
+      ],
+      "answer": 1,
+      "explanation": "Git runs locally and tracks history. GitHub is a cloud platform for hosting repositories and collaboration features such as pull requests and Actions."
+    },
+    {
+      "id": "git-4",
+      "question": "Which operation rewrites commit hashes by replaying commits onto a new base?",
+      "options": ["merge", "rebase", "clone", "fetch"],
+      "answer": 1,
+      "explanation": "Rebase replays commits on top of another base, producing a linear history but new hashes. Never rebase a shared branch that others are working on."
+    },
+    {
+      "id": "git-5",
+      "question": "Which command safely undoes a pushed commit by creating a new commit?",
+      "options": ["git reset --hard", "git revert", "git checkout", "git stash"],
+      "answer": 1,
+      "explanation": "git revert creates a new commit that reverses the changes of an earlier commit, so shared history is preserved. reset --hard rewrites history and discards work."
+    },
+    {
+      "id": "git-6",
+      "question": "What does git stash do?",
+      "options": [
+        "Deletes the current branch",
+        "Temporarily shelves uncommitted changes",
+        "Pushes changes to the remote",
+        "Creates a release tag"
+      ],
+      "answer": 1,
+      "explanation": "git stash saves uncommitted changes aside so you can switch context. git stash pop reapplies and removes the stash entry."
+    },
+    {
+      "id": "git-7",
+      "question": "Adding a file to .gitignore affects files that are already tracked how?",
+      "options": [
+        "They are removed from the repository automatically",
+        "They stay tracked until explicitly removed with git rm --cached",
+        "They are ignored on the next commit",
+        "Git refuses to start"
+      ],
+      "answer": 1,
+      "explanation": ".gitignore only affects untracked files. Already tracked files keep being tracked until you run git rm --cached and commit the removal."
+    },
+    {
+      "id": "git-8",
+      "question": "In git push -u origin main, what is origin?",
+      "options": [
+        "The first commit",
+        "The default name of the remote repository",
+        "The current branch",
+        "A Git username"
+      ],
+      "answer": 1,
+      "explanation": "origin is the conventional name for the remote you cloned from or added. -u sets main to track origin/main for future pushes and pulls."
+    },
+    {
+      "id": "git-9",
+      "question": "What is a pull request?",
+      "options": [
+        "A Git command that pulls changes",
+        "A platform feature to propose, review and merge branch changes",
+        "A type of merge conflict",
+        "A way to clone a repository"
+      ],
+      "answer": 1,
+      "explanation": "A pull request asks to merge one branch into another and provides a space for review, discussion and CI checks. It is a GitHub/GitLab concept, not a Git command."
+    },
+    {
+      "id": "git-10",
+      "question": "Which command shows the commit history?",
+      "options": ["git status", "git log", "git diff", "git show-config"],
+      "answer": 1,
+      "explanation": "git log lists commits with hashes, authors and messages. git status shows working-tree state, and git diff shows unstaged changes."
+    }
+  ],
+  "backend": [
+    {
+      "id": "backend-1",
+      "question": "What is Node.js?",
+      "options": [
+        "A programming language",
+        "A JavaScript runtime built on the V8 engine",
+        "A relational database",
+        "A CSS framework"
+      ],
+      "answer": 1,
+      "explanation": "Node.js runs JavaScript outside the browser using V8. It provides server-side APIs such as fs, http and process."
+    },
+    {
+      "id": "backend-2",
+      "question": "What does non-blocking I/O mean in Node.js?",
+      "options": [
+        "All operations run on multiple JS threads",
+        "I/O is offloaded and the event loop stays free to handle other work",
+        "Requests are queued until the server restarts",
+        "Only synchronous APIs are allowed"
+      ],
+      "answer": 1,
+      "explanation": "Node delegates I/O to the OS or libuv and continues executing other JavaScript. Callbacks and promises run when the operation completes."
+    },
+    {
+      "id": "backend-3",
+      "question": "What is the correct signature of Express middleware?",
+      "options": ["(req, res)", "(req, res, next)", "(request, response, error)", "(ctx, next)"],
+      "answer": 1,
+      "explanation": "Middleware receives req and res, plus next to pass control to the following middleware. Error handlers are the exception: they take four arguments."
+    },
+    {
+      "id": "backend-4",
+      "question": "How does Express distinguish an error-handling middleware?",
+      "options": [
+        "It is placed first",
+        "It has four arguments: (err, req, res, next)",
+        "It uses a special error() function",
+        "It must be async"
+      ],
+      "answer": 1,
+      "explanation": "Express identifies error middleware by its four parameters. It must be registered after routes, and errors reach it via next(err)."
+    },
+    {
+      "id": "backend-5",
+      "question": "In /users/:id?active=true, where does Express expose the values?",
+      "options": [
+        "req.body.id and req.body.active",
+        "req.params.id and req.query.active",
+        "req.id and req.active",
+        "req.headers.id and req.headers.active"
+      ],
+      "answer": 1,
+      "explanation": "Route parameters are in req.params, while query string values are in req.query. Body data comes from req.body after body-parsing middleware."
+    },
+    {
+      "id": "backend-6",
+      "question": "Which middleware parses JSON request bodies in Express?",
+      "options": ["express.json()", "express.urlencoded()", "express.static()", "cookieParser()"],
+      "answer": 0,
+      "explanation": "express.json() parses application/json bodies into req.body. express.urlencoded() handles HTML form submissions."
+    },
+    {
+      "id": "backend-7",
+      "question": "Which statement about JWT payloads is correct?",
+      "options": [
+        "They are encrypted and unreadable by clients",
+        "They are signed but readable, so they must not contain secrets",
+        "They are stored only on the server",
+        "They can never expire"
+      ],
+      "answer": 1,
+      "explanation": "A JWT is base64url-encoded and signed. Anyone can decode the payload, but they cannot modify it without invalidating the signature. Never put passwords or secrets in it."
+    },
+    {
+      "id": "backend-8",
+      "question": "Who enforces CORS?",
+      "options": [
+        "The Node.js server runtime",
+        "The browser",
+        "The database",
+        "The DNS resolver"
+      ],
+      "answer": 1,
+      "explanation": "CORS is enforced by browsers. The server must send the appropriate Access-Control-Allow-* headers, but tools like curl and Postman ignore the restriction."
+    },
+    {
+      "id": "backend-9",
+      "question": "Where should production secrets such as database passwords live?",
+      "options": [
+        "Hard-coded in source files",
+        "In environment variables or a secret manager",
+        "In a public GitHub repository",
+        "In a frontend JavaScript bundle"
+      ],
+      "answer": 1,
+      "explanation": "Secrets belong in environment variables or a managed secret store, never in source or client bundles. Frontend env values prefixed for the client are public."
+    },
+    {
+      "id": "backend-10",
+      "question": "Why should you avoid readFileSync inside an Express request handler?",
+      "options": [
+        "It is deprecated",
+        "It blocks the event loop for all requests while reading",
+        "It cannot read JSON",
+        "It requires a browser"
+      ],
+      "answer": 1,
+      "explanation": "Synchronous file I/O blocks the single JavaScript thread, so every concurrent request waits. Use async/streaming APIs for request-time work."
+    }
+  ],
+  "database": [
+    {
+      "id": "database-1",
+      "question": "Which is a typical reason to choose a NoSQL database?",
+      "options": [
+        "You need strict multi-table joins everywhere",
+        "You need flexible document shapes and high write throughput",
+        "You need ANSI SQL only",
+        "You need foreign-key constraints on every field"
+      ],
+      "answer": 1,
+      "explanation": "NoSQL databases such as MongoDB offer flexible document models and scale well for certain workloads. Relational databases are still strong for complex relationships and strict consistency."
+    },
+    {
+      "id": "database-2",
+      "question": "How does MongoDB store documents internally?",
+      "options": ["CSV rows", "BSON", "XML", "Plain HTML"],
+      "answer": 1,
+      "explanation": "MongoDB stores documents as BSON, a binary encoding of JSON-like data that supports extra types such as ObjectId and Date."
+    },
+    {
+      "id": "database-3",
+      "question": "What is the main purpose of an index?",
+      "options": [
+        "To enforce that every field is a string",
+        "To speed up lookups by avoiding full collection or table scans",
+        "To compress the database file",
+        "To create automatic backups"
+      ],
+      "answer": 1,
+      "explanation": "Indexes provide a fast lookup structure, usually a B-tree. They speed up reads but add storage and write overhead because each change updates the index."
+    },
+    {
+      "id": "database-4",
+      "question": "What does the A in ACID stand for?",
+      "options": ["Availability", "Atomicity", "Authentication", "Aggregation"],
+      "answer": 1,
+      "explanation": "Atomicity guarantees that all statements in a transaction succeed or none do. Consistency, Isolation and Durability complete ACID."
+    },
+    {
+      "id": "database-5",
+      "question": "Which join returns all rows from the left table, even when there is no match on the right?",
+      "options": ["INNER JOIN", "LEFT JOIN", "CROSS JOIN", "SELF JOIN"],
+      "answer": 1,
+      "explanation": "A LEFT JOIN keeps every row from the left table and fills right-side columns with NULL when no match exists. INNER JOIN keeps only matches."
+    },
+    {
+      "id": "database-6",
+      "question": "What is the main goal of database normalisation?",
+      "options": [
+        "Duplicating data for faster reads",
+        "Reducing redundancy and update anomalies",
+        "Encrypting every column",
+        "Removing all indexes"
+      ],
+      "answer": 1,
+      "explanation": "Normalisation organises data into related tables so each fact is stored once, reducing duplication and update anomalies. Denormalisation can later trade that for read speed."
+    },
+    {
+      "id": "database-7",
+      "question": "What is the N+1 query problem?",
+      "options": [
+        "Running one query for N rows and then one additional query per row",
+        "A query that returns more than N rows",
+        "Using more than N indexes",
+        "A transaction with N statements"
+      ],
+      "answer": 0,
+      "explanation": "Fetching N parents then querying for each parent's children causes 1 + N queries. Fix it with joins, eager loading, populate/aggregation or DataLoader batching."
+    },
+    {
+      "id": "database-8",
+      "question": "What is special about the _id field in MongoDB?",
+      "options": [
+        "It must be a string",
+        "It is a unique primary key automatically added to every document",
+        "It is optional and never indexed",
+        "It stores the creation time only"
+      ],
+      "answer": 1,
+      "explanation": "Every MongoDB document has a unique _id, generated as an ObjectId if not provided. It is indexed by default and uniquely identifies the document."
+    },
+    {
+      "id": "database-9",
+      "question": "Which aggregation stage groups documents and computes values such as sums or averages?",
+      "options": ["$match", "$group", "$project", "$unwind"],
+      "answer": 1,
+      "explanation": "$group groups documents by an expression and computes accumulators such as $sum and $avg. $match filters, $project reshapes and $unwind flattens arrays."
+    },
+    {
+      "id": "database-10",
+      "question": "What is Mongoose?",
+      "options": [
+        "A MongoDB GUI client",
+        "An ODM that adds schemas and validation on top of MongoDB",
+        "A SQL database engine",
+        "A frontend state manager"
+      ],
+      "answer": 1,
+      "explanation": "Mongoose is an Object Data Modelling library for MongoDB. It provides schemas, validation, hooks and population, while MongoDB itself remains schema-flexible."
+    }
+  ],
+  "advanced": [
+    {
+      "id": "advanced-1",
+      "question": "What does DNS do when you enter a domain name?",
+      "options": [
+        "Encrypts the HTTP request",
+        "Resolves the domain name to an IP address",
+        "Renders the HTML",
+        "Stores cookies"
+      ],
+      "answer": 1,
+      "explanation": "DNS translates a human-readable domain into an IP address using cached resolvers and authoritative name servers. The browser then connects to that address."
+    },
+    {
+      "id": "advanced-2",
+      "question": "What does TLS add to HTTP?",
+      "options": [
+        "Faster DNS resolution",
+        "Encryption, integrity and server authentication",
+        "Caching of static assets",
+        "Automatic database indexing"
+      ],
+      "answer": 1,
+      "explanation": "HTTPS runs HTTP over TLS, which encrypts traffic, detects tampering and verifies the server's certificate. It prevents eavesdropping and man-in-the-middle attacks."
+    },
+    {
+      "id": "advanced-3",
+      "question": "A request reaches the server but the resource does not exist. Which status code fits best?",
+      "options": ["200", "301", "404", "500"],
+      "answer": 2,
+      "explanation": "404 means the server could not find the requested resource. 500 would indicate the server failed while handling a valid request."
+    },
+    {
+      "id": "advanced-4",
+      "question": "What is the difference between 401 and 403?",
+      "options": [
+        "401 means not authenticated; 403 means authenticated but not allowed",
+        "401 means not allowed; 403 means not authenticated",
+        "They are identical",
+        "401 is a server error; 403 is a redirect"
+      ],
+      "answer": 0,
+      "explanation": "401 Unauthorized indicates missing or invalid authentication. 403 Forbidden means the server understood the request but the user lacks permission."
+    },
+    {
+      "id": "advanced-5",
+      "question": "Which practice best prevents XSS from user-generated content?",
+      "options": [
+        "Storing the content in localStorage",
+        "Escaping output and sanitising allowed HTML",
+        "Using GET instead of POST",
+        "Adding a favicon"
+      ],
+      "answer": 1,
+      "explanation": "XSS happens when untrusted input is interpreted as executable markup or script. Escape by default, sanitise rich HTML with a library such as DOMPurify, and use a strict CSP."
+    },
+    {
+      "id": "advanced-6",
+      "question": "Which measure helps prevent CSRF attacks?",
+      "options": [
+        "SameSite cookies and CSRF tokens",
+        "Storing JWTs in localStorage",
+        "Using HTTP instead of HTTPS",
+        "Removing CORS headers"
+      ],
+      "answer": 0,
+      "explanation": "CSRF abuses the browser's automatic cookie sending from another site. SameSite cookies, anti-CSRF tokens and Origin checks prevent it. Tokens in localStorage do not stop CSRF for cookie-based auth."
+    },
+    {
+      "id": "advanced-7",
+      "question": "Which Cache-Control value is ideal for a hashed production asset such as app.3f9c.js?",
+      "options": [
+        "no-store",
+        "public, max-age=31536000, immutable",
+        "no-cache",
+        "private, max-age=0"
+      ],
+      "answer": 1,
+      "explanation": "A hashed filename changes whenever the content changes, so it can be cached for a year and marked immutable. HTML should generally revalidate."
+    },
+    {
+      "id": "advanced-8",
+      "question": "Which technology provides a full-duplex persistent connection?",
+      "options": ["Short polling", "Server-Sent Events", "WebSockets", "Static HTML"],
+      "answer": 2,
+      "explanation": "WebSockets allow both client and server to send messages on one long-lived connection. SSE is one-way, server to client."
+    },
+    {
+      "id": "advanced-9",
+      "question": "What does CI/CD stand for?",
+      "options": [
+        "Cloud Infrastructure / Cloud Deployment",
+        "Continuous Integration / Continuous Delivery or Deployment",
+        "Code Inspection / Code Debugging",
+        "Cached Indexing / Cached Data"
+      ],
+      "answer": 1,
+      "explanation": "CI automatically builds and tests every change. CD automatically prepares or deploys tested code to staging or production."
+    },
+    {
+      "id": "advanced-10",
+      "question": "What is the recommended target for Largest Contentful Paint (LCP)?",
+      "options": ["Under 0.1s", "Under 2.5s", "Under 10s", "Under 200ms"],
+      "answer": 1,
+      "explanation": "Core Web Vitals consider LCP good when it is 2.5 seconds or less. INP should stay under 200ms and CLS under 0.1."
+    }
+  ]
+}

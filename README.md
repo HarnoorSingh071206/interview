@@ -10,6 +10,8 @@ A React + Vite front-end for topic-wise web development interview practice, buil
 - **Search** across every question, answer and topic (`⌘K` / `Ctrl+K` / `/`)
 - **Reviewed tracking** saved in `localStorage`, per-topic and overall progress
 - **Hide reviewed** toggle, expand/collapse all, and a random question picker
+- **Quiz generator** — pick any number of topics and get a random 5-question MCQ quiz
+- **Answer review** — score, your answer vs. the correct answer, and an explanation for every question
 - **Light & dark themes** (remembers your choice, respects system preference by default)
 - **Responsive** — collapsible sidebar and mobile layout
 
@@ -41,10 +43,36 @@ src/
     Sidebar.jsx            # topic navigation + overall progress
     QuestionCard.jsx       # accordion card with difficulty + reviewed state
     Answer.jsx             # small markdown-ish renderer for answers
+    QuizSetup.jsx          # multi-topic quiz setup dialog
+    QuizView.jsx           # one-question-at-a-time quiz runner
+    QuizResults.jsx        # score ring + answer/explanation review
     Icons.jsx              # inline SVG icon set
   data/
     questions.js           # all topics and questions
+    quizzes.json           # 10 MCQs per topic (quiz bank)
+  lib/
+    quiz.js                # shuffled 5-question quiz builder
 ```
+
+## Quiz format
+
+`src/data/quizzes.json` is keyed by topic id. Each topic holds 10 multiple-choice questions:
+
+```json
+{
+  "javascript": [
+    {
+      "id": "javascript-1",
+      "question": "Which declaration is block-scoped and cannot be reassigned?",
+      "options": ["var", "let", "const", "function"],
+      "answer": 2,
+      "explanation": "const is block-scoped and prevents reassignment of the binding."
+    }
+  ]
+}
+```
+
+`answer` is the 0-based index of the correct option. A quiz flattens the selected topics' pools, shuffles them and takes 5.
 
 ## Adding questions
 
