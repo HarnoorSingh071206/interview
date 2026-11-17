@@ -106,7 +106,8 @@ export default function QuizSetup({
           <div className="quiz-pool-note">
             <Icon name="target" size={15} />
             <span>
-              {poolSize} question{poolSize === 1 ? '' : 's'} in the pool · 5 will be picked at random
+              {poolSize} question{poolSize === 1 ? '' : 's'} in the pool · each quiz is 2 easy,
+              2 moderate and 1 hard
             </span>
           </div>
         </div>

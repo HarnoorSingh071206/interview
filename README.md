@@ -63,6 +63,7 @@ src/
   "javascript": [
     {
       "id": "javascript-1",
+      "difficulty": "Easy",
       "question": "Which declaration is block-scoped and cannot be reassigned?",
       "options": ["var", "let", "const", "function"],
       "answer": 2,
@@ -72,7 +73,7 @@ src/
 }
 ```
 
-`answer` is the 0-based index of the correct option. A quiz flattens the selected topics' pools, shuffles them and takes 5.
+`answer` is the 0-based index of the correct option. A quiz flattens the selected topics' pools and picks **2 easy, 2 moderate and 1 hard** questions at random, then shuffles their order.
 
 ## Adding questions
 

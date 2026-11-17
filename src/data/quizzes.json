@@ -2,13 +2,20 @@
   "html": [
     {
       "id": "html-1",
+      "difficulty": "Easy",
       "question": "Which element should wrap the primary content of a page?",
-      "options": ["<header>", "<main>", "<section>", "<aside>"],
+      "options": [
+        "<header>",
+        "<main>",
+        "<section>",
+        "<aside>"
+      ],
       "answer": 1,
       "explanation": "<main> represents the dominant content of the document and should appear once per page. <header>, <section> and <aside> describe other parts of the page."
     },
     {
       "id": "html-2",
+      "difficulty": "Easy",
       "question": "What is the main purpose of the alt attribute on an image?",
       "options": [
         "It sets the image tooltip on hover",
@@ -21,13 +28,20 @@
     },
     {
       "id": "html-3",
+      "difficulty": "Easy",
       "question": "Which of these elements is block-level by default?",
-      "options": ["<span>", "<a>", "<div>", "<img>"],
+      "options": [
+        "<span>",
+        "<a>",
+        "<div>",
+        "<img>"
+      ],
       "answer": 2,
       "explanation": "<div> is a block-level container, so it starts on a new line and takes the available width. <span>, <a> and <img> are inline by default."
     },
     {
       "id": "html-4",
+      "difficulty": "Hard",
       "question": "How does the defer attribute change a script's execution?",
       "options": [
         "It downloads and executes the script immediately",
@@ -40,20 +54,33 @@
     },
     {
       "id": "html-5",
+      "difficulty": "Moderate",
       "question": "Which element is the most semantic choice for a set of navigation links?",
-      "options": ["<menu>", "<nav>", "<section>", "<div>"],
+      "options": [
+        "<menu>",
+        "<nav>",
+        "<section>",
+        "<div>"
+      ],
       "answer": 1,
       "explanation": "<nav> identifies a major block of navigation links and helps screen-reader users jump to it. A plain <div> carries no meaning."
     },
     {
       "id": "html-6",
+      "difficulty": "Moderate",
       "question": "Which input type gives built-in email validation on modern browsers?",
-      "options": ["type=\"text\"", "type=\"email\"", "type=\"mail\"", "type=\"string\""],
+      "options": [
+        "type=\"text\"",
+        "type=\"email\"",
+        "type=\"mail\"",
+        "type=\"string\""
+      ],
       "answer": 1,
       "explanation": "input type=\"email\" triggers the browser's email format validation and often shows an email-optimised keyboard on mobile. There is no type=\"mail\"."
     },
     {
       "id": "html-7",
+      "difficulty": "Moderate",
       "question": "What does <label for=\"email\"> do?",
       "options": [
         "Styles the input with the id email",
@@ -66,13 +93,20 @@
     },
     {
       "id": "html-8",
+      "difficulty": "Easy",
       "question": "Which attribute makes a form field mandatory before submission?",
-      "options": ["validate", "mandatory", "required", "needed"],
+      "options": [
+        "validate",
+        "mandatory",
+        "required",
+        "needed"
+      ],
       "answer": 2,
       "explanation": "The boolean required attribute enables native validation and blocks form submission until the field has a value. Server-side validation is still needed."
     },
     {
       "id": "html-9",
+      "difficulty": "Hard",
       "question": "How should you mark an image that is purely decorative?",
       "options": [
         "alt=\"decorative image\"",
@@ -85,6 +119,7 @@
     },
     {
       "id": "html-10",
+      "difficulty": "Moderate",
       "question": "What is the viewport meta tag used for?",
       "options": [
         "Blocking search engine crawlers",
@@ -99,41 +134,72 @@
   "javascript": [
     {
       "id": "javascript-1",
+      "difficulty": "Easy",
       "question": "Which declaration is block-scoped and cannot be reassigned?",
-      "options": ["var", "let", "const", "function"],
+      "options": [
+        "var",
+        "let",
+        "const",
+        "function"
+      ],
       "answer": 2,
       "explanation": "const is block-scoped and prevents reassignment of the binding. Note that objects and arrays declared with const can still be mutated."
     },
     {
       "id": "javascript-2",
+      "difficulty": "Moderate",
       "question": "What does typeof null return?",
-      "options": ["\"null\"", "\"undefined\"", "\"object\"", "\"boolean\""],
+      "options": [
+        "\"null\"",
+        "\"undefined\"",
+        "\"object\"",
+        "\"boolean\""
+      ],
       "answer": 2,
       "explanation": "typeof null returns \"object\" because of a long-standing historical bug in JavaScript that cannot be fixed without breaking the web."
     },
     {
       "id": "javascript-3",
+      "difficulty": "Easy",
       "question": "What is the result of 1 == \"1\" and 1 === \"1\"?",
-      "options": ["true and true", "true and false", "false and false", "false and true"],
+      "options": [
+        "true and true",
+        "true and false",
+        "false and false",
+        "false and true"
+      ],
       "answer": 1,
       "explanation": "== performs type coercion, so the string is converted to a number and the comparison is true. === compares value and type, so a number and a string are not equal."
     },
     {
       "id": "javascript-4",
+      "difficulty": "Easy",
       "question": "What does [1, 2, 3].map(n => n * 2) return?",
-      "options": ["[1, 2, 3]", "[2, 4, 6]", "12", "[2, 4, 6, 8]"],
+      "options": [
+        "[1, 2, 3]",
+        "[2, 4, 6]",
+        "12",
+        "[2, 4, 6, 8]"
+      ],
       "answer": 1,
       "explanation": "map creates a new array by applying the callback to every element. The original array is not modified."
     },
     {
       "id": "javascript-5",
+      "difficulty": "Hard",
       "question": "Which callbacks run first after the current synchronous code finishes?",
-      "options": ["setTimeout callbacks", "Promise callbacks", "DOM events", "setInterval callbacks"],
+      "options": [
+        "setTimeout callbacks",
+        "Promise callbacks",
+        "DOM events",
+        "setInterval callbacks"
+      ],
       "answer": 1,
       "explanation": "Promise callbacks go to the microtask queue, which is drained completely before the browser handles the next macrotask such as timers or UI events."
     },
     {
       "id": "javascript-6",
+      "difficulty": "Easy",
       "question": "What is a closure?",
       "options": [
         "A function that runs only once",
@@ -146,6 +212,7 @@
     },
     {
       "id": "javascript-7",
+      "difficulty": "Moderate",
       "question": "How does the this keyword behave inside an arrow function?",
       "options": [
         "It always refers to the global object",
@@ -158,13 +225,20 @@
     },
     {
       "id": "javascript-8",
+      "difficulty": "Hard",
       "question": "Which modern API creates a deep copy of many built-in values, including Maps and Dates?",
-      "options": ["Object.assign", "JSON.parse(JSON.stringify(x))", "structuredClone", "Object.create"],
+      "options": [
+        "Object.assign",
+        "JSON.parse(JSON.stringify(x))",
+        "structuredClone",
+        "Object.create"
+      ],
       "answer": 2,
       "explanation": "structuredClone performs a deep clone and supports Dates, Maps, Sets and cycles. Object.assign is shallow, and the JSON round-trip loses types such as Date."
     },
     {
       "id": "javascript-9",
+      "difficulty": "Moderate",
       "question": "What is debounce used for?",
       "options": [
         "Running a function at most once per fixed interval",
@@ -177,8 +251,14 @@
     },
     {
       "id": "javascript-10",
+      "difficulty": "Moderate",
       "question": "Event delegation relies on which browser behaviour?",
-      "options": ["Event capturing only", "Event bubbling", "Microtasks", "CSS specificity"],
+      "options": [
+        "Event capturing only",
+        "Event bubbling",
+        "Microtasks",
+        "CSS specificity"
+      ],
       "answer": 1,
       "explanation": "A listener on a parent can handle events from children because events bubble upward. The handler inspects event.target or closest() to identify the actual source."
     }
@@ -186,6 +266,7 @@
   "react": [
     {
       "id": "react-1",
+      "difficulty": "Easy",
       "question": "What does the useState hook return?",
       "options": [
         "Only the current state value",
@@ -198,6 +279,7 @@
     },
     {
       "id": "react-2",
+      "difficulty": "Moderate",
       "question": "What is the return value of a useEffect callback used for?",
       "options": [
         "Returning JSX to render",
@@ -210,6 +292,7 @@
     },
     {
       "id": "react-3",
+      "difficulty": "Easy",
       "question": "Why does React need a key prop on list items?",
       "options": [
         "To style each item uniquely",
@@ -222,6 +305,7 @@
     },
     {
       "id": "react-4",
+      "difficulty": "Easy",
       "question": "What happens when a component's state changes with a setter?",
       "options": [
         "The browser reloads the page",
@@ -234,6 +318,7 @@
     },
     {
       "id": "react-5",
+      "difficulty": "Moderate",
       "question": "What is useMemo used for?",
       "options": [
         "Memoising an expensive computed value between renders",
@@ -246,6 +331,7 @@
     },
     {
       "id": "react-6",
+      "difficulty": "Easy",
       "question": "Which statement about props is true?",
       "options": [
         "A child component should mutate props directly",
@@ -258,6 +344,7 @@
     },
     {
       "id": "react-7",
+      "difficulty": "Moderate",
       "question": "What makes an input a controlled component?",
       "options": [
         "Using a ref to read its value on submit",
@@ -270,6 +357,7 @@
     },
     {
       "id": "react-8",
+      "difficulty": "Moderate",
       "question": "What problem does React Context primarily solve?",
       "options": [
         "Slow network requests",
@@ -282,6 +370,7 @@
     },
     {
       "id": "react-9",
+      "difficulty": "Hard",
       "question": "Which is true about updating useRef.current?",
       "options": [
         "It triggers a re-render",
@@ -294,6 +383,7 @@
     },
     {
       "id": "react-10",
+      "difficulty": "Hard",
       "question": "What is the main rule for calling hooks?",
       "options": [
         "Call them inside loops to reuse logic",
@@ -308,13 +398,20 @@
   "css": [
     {
       "id": "css-1",
+      "difficulty": "Easy",
       "question": "Which property creates space inside an element's border?",
-      "options": ["margin", "padding", "border-spacing", "gap"],
+      "options": [
+        "margin",
+        "padding",
+        "border-spacing",
+        "gap"
+      ],
       "answer": 1,
       "explanation": "Padding is the space between the content and the border. Margin is the space outside the border, between the element and its neighbours."
     },
     {
       "id": "css-2",
+      "difficulty": "Easy",
       "question": "What does box-sizing: border-box change?",
       "options": [
         "It removes the border from the element",
@@ -327,41 +424,72 @@
     },
     {
       "id": "css-3",
+      "difficulty": "Moderate",
       "question": "Which selector has the highest specificity?",
-      "options": ["A class selector", "An ID selector", "A type selector", "A universal selector"],
+      "options": [
+        "A class selector",
+        "An ID selector",
+        "A type selector",
+        "A universal selector"
+      ],
       "answer": 1,
       "explanation": "IDs outrank classes, attributes and pseudo-classes, which in turn outrank element selectors. Inline styles and !important sit above normal declarations."
     },
     {
       "id": "css-4",
+      "difficulty": "Easy",
       "question": "What is the default flex-direction in a flex container?",
-      "options": ["column", "row", "row-reverse", "column-reverse"],
+      "options": [
+        "column",
+        "row",
+        "row-reverse",
+        "column-reverse"
+      ],
       "answer": 1,
       "explanation": "The default is row, so items are laid out horizontally along the main axis. Use flex-direction: column when the main axis should be vertical."
     },
     {
       "id": "css-5",
+      "difficulty": "Moderate",
       "question": "Which position value removes an element from normal flow and positions it against the nearest positioned ancestor?",
-      "options": ["relative", "fixed", "absolute", "sticky"],
+      "options": [
+        "relative",
+        "fixed",
+        "absolute",
+        "sticky"
+      ],
       "answer": 2,
       "explanation": "absolute takes the element out of flow and positions it relative to the closest ancestor with a non-static position, or the initial containing block if none exists."
     },
     {
       "id": "css-6",
+      "difficulty": "Easy",
       "question": "Which unit is relative to the root element's font size?",
-      "options": ["px", "em", "rem", "vh"],
+      "options": [
+        "px",
+        "em",
+        "rem",
+        "vh"
+      ],
       "answer": 2,
       "explanation": "rem means root em, so it is based on the html element's font size. em is based on the element's own or parent's font size and compounds when nested."
     },
     {
       "id": "css-7",
+      "difficulty": "Hard",
       "question": "Which of these creates a new stacking context?",
-      "options": ["color: red", "opacity: 0.5", "font-weight: 700", "margin: 10px"],
+      "options": [
+        "color: red",
+        "opacity: 0.5",
+        "font-weight: 700",
+        "margin: 10px"
+      ],
       "answer": 1,
       "explanation": "An opacity below 1 creates a stacking context, as do transforms, filters and positioned children with z-index. This affects how z-index is compared."
     },
     {
       "id": "css-8",
+      "difficulty": "Moderate",
       "question": "What is the difference between display: none and visibility: hidden?",
       "options": [
         "They are identical",
@@ -374,15 +502,27 @@
     },
     {
       "id": "css-9",
+      "difficulty": "Moderate",
       "question": "Which pseudo-element inserts generated content before an element's content?",
-      "options": [":before", "::before", "::first-line", ":hover"],
+      "options": [
+        ":before",
+        "::before",
+        "::first-line",
+        ":hover"
+      ],
       "answer": 1,
       "explanation": "::before (double colon) is a pseudo-element used with the content property. Single-colon :before is legacy syntax. :hover is a pseudo-class."
     },
     {
       "id": "css-10",
+      "difficulty": "Hard",
       "question": "Which feature lets a component respond to the width of its parent rather than the viewport?",
-      "options": ["Media queries", "Container queries", "CSS variables", "Flexbox"],
+      "options": [
+        "Media queries",
+        "Container queries",
+        "CSS variables",
+        "Flexbox"
+      ],
       "answer": 1,
       "explanation": "Container queries use @container and require container-type on the parent. They make components truly reusable because they adapt to their container's size."
     }
@@ -390,13 +530,20 @@
   "tailwind": [
     {
       "id": "tailwind-1",
+      "difficulty": "Easy",
       "question": "Which utility applies 1rem of padding on all sides with the default scale?",
-      "options": ["p-1", "p-2", "p-4", "p-8"],
+      "options": [
+        "p-1",
+        "p-2",
+        "p-4",
+        "p-8"
+      ],
       "answer": 2,
       "explanation": "In Tailwind's default spacing scale, p-4 equals 1rem (16px). p-2 is 0.5rem and p-8 is 2rem."
     },
     {
       "id": "tailwind-2",
+      "difficulty": "Easy",
       "question": "What does the md: prefix mean in md:flex?",
       "options": [
         "Apply flex only below the md breakpoint",
@@ -409,13 +556,20 @@
     },
     {
       "id": "tailwind-3",
+      "difficulty": "Easy",
       "question": "Which variant applies a utility only while the pointer is over the element?",
-      "options": ["focus:", "active:", "hover:", "group-hover:"],
+      "options": [
+        "focus:",
+        "active:",
+        "hover:",
+        "group-hover:"
+      ],
       "answer": 2,
       "explanation": "hover: targets the hovered element itself. focus: is for keyboard or programmatic focus and active: applies while a control is being pressed."
     },
     {
       "id": "tailwind-4",
+      "difficulty": "Moderate",
       "question": "How does Tailwind avoid shipping unused CSS?",
       "options": [
         "It downloads only classes used at runtime from a server",
@@ -428,13 +582,20 @@
     },
     {
       "id": "tailwind-5",
+      "difficulty": "Moderate",
       "question": "Which is the correct Tailwind arbitrary value for a width of 327px?",
-      "options": ["w-327", "w-[327px]", "width-327px", "w(327px)"],
+      "options": [
+        "w-327",
+        "w-[327px]",
+        "width-327px",
+        "w(327px)"
+      ],
       "answer": 1,
       "explanation": "Square brackets introduce arbitrary values: w-[327px]. Arbitrary values are useful for one-offs but repeated values should become theme tokens."
     },
     {
       "id": "tailwind-6",
+      "difficulty": "Hard",
       "question": "How do you enable class-based dark mode in Tailwind v4?",
       "options": [
         "Set darkMode: true in package.json",
@@ -447,6 +608,7 @@
     },
     {
       "id": "tailwind-7",
+      "difficulty": "Moderate",
       "question": "What does flex md:flex-col do?",
       "options": [
         "Always lays items out in a column",
@@ -459,6 +621,7 @@
     },
     {
       "id": "tailwind-8",
+      "difficulty": "Moderate",
       "question": "What is @apply used for?",
       "options": [
         "Applying JavaScript logic to a component",
@@ -471,6 +634,7 @@
     },
     {
       "id": "tailwind-9",
+      "difficulty": "Hard",
       "question": "Why does className={'text-' + color + '-500'} often fail to generate a class?",
       "options": [
         "Tailwind cannot parse JSX",
@@ -483,8 +647,14 @@
     },
     {
       "id": "tailwind-10",
+      "difficulty": "Easy",
       "question": "Which utility centers flex items along the main axis?",
-      "options": ["items-center", "justify-center", "content-center", "text-center"],
+      "options": [
+        "items-center",
+        "justify-center",
+        "content-center",
+        "text-center"
+      ],
       "answer": 1,
       "explanation": "justify-content works along the main axis, so justify-center centers items horizontally in a row. items-center aligns items along the cross axis."
     }
@@ -492,20 +662,33 @@
   "nextjs": [
     {
       "id": "nextjs-1",
+      "difficulty": "Easy",
       "question": "What is Next.js built on top of?",
-      "options": ["Angular", "Vue", "React", "Svelte"],
+      "options": [
+        "Angular",
+        "Vue",
+        "React",
+        "Svelte"
+      ],
       "answer": 2,
       "explanation": "Next.js is a React framework by Vercel. It adds routing, rendering strategies, data fetching and optimisation on top of React."
     },
     {
       "id": "nextjs-2",
+      "difficulty": "Easy",
       "question": "In the App Router, which file defines the UI for a route segment?",
-      "options": ["index.jsx", "page.jsx", "route.jsx", "view.jsx"],
+      "options": [
+        "index.jsx",
+        "page.jsx",
+        "route.jsx",
+        "view.jsx"
+      ],
       "answer": 1,
       "explanation": "Folders define URL segments and page.jsx renders that segment's UI. layout.jsx wraps pages and persists across navigation."
     },
     {
       "id": "nextjs-3",
+      "difficulty": "Moderate",
       "question": "What does the 'use client' directive do?",
       "options": [
         "Marks a component to run only in the browser with no server rendering",
@@ -518,6 +701,7 @@
     },
     {
       "id": "nextjs-4",
+      "difficulty": "Easy",
       "question": "What is server-side rendering (SSR)?",
       "options": [
         "Generating HTML at build time only",
@@ -530,6 +714,7 @@
     },
     {
       "id": "nextjs-5",
+      "difficulty": "Hard",
       "question": "What does incremental static regeneration (ISR) allow?",
       "options": [
         "Static pages that revalidate in the background after a time interval",
@@ -542,6 +727,7 @@
     },
     {
       "id": "nextjs-6",
+      "difficulty": "Easy",
       "question": "What does next/image provide automatically?",
       "options": [
         "Image editing tools",
@@ -554,13 +740,20 @@
     },
     {
       "id": "nextjs-7",
+      "difficulty": "Moderate",
       "question": "Which folder name creates a dynamic route in the App Router?",
-      "options": ["{slug}", ":slug", "[slug]", "$slug"],
+      "options": [
+        "{slug}",
+        ":slug",
+        "[slug]",
+        "$slug"
+      ],
       "answer": 2,
       "explanation": "app/blog/[slug]/page.jsx matches /blog/anything and exposes the value through the params prop. [...slug] creates a catch-all route."
     },
     {
       "id": "nextjs-8",
+      "difficulty": "Moderate",
       "question": "What does the 'use server' directive mark?",
       "options": [
         "A component that runs on the client",
@@ -573,6 +766,7 @@
     },
     {
       "id": "nextjs-9",
+      "difficulty": "Moderate",
       "question": "What is special about layout.jsx in the App Router?",
       "options": [
         "It can only be used at the root",
@@ -585,6 +779,7 @@
     },
     {
       "id": "nextjs-10",
+      "difficulty": "Hard",
       "question": "How do Server Components typically fetch data in the App Router?",
       "options": [
         "With useEffect and useState",
@@ -599,13 +794,20 @@
   "git": [
     {
       "id": "git-1",
+      "difficulty": "Easy",
       "question": "Which command creates and switches to a new branch?",
-      "options": ["git branch new-branch", "git switch -c new-branch", "git checkout new-branch", "git merge new-branch"],
+      "options": [
+        "git branch new-branch",
+        "git switch -c new-branch",
+        "git checkout new-branch",
+        "git merge new-branch"
+      ],
       "answer": 1,
       "explanation": "git switch -c creates the branch and checks it out in one step. git branch only creates it, and git checkout new-branch fails if the branch does not exist."
     },
     {
       "id": "git-2",
+      "difficulty": "Easy",
       "question": "What does git add do?",
       "options": [
         "Commits the changes immediately",
@@ -618,6 +820,7 @@
     },
     {
       "id": "git-3",
+      "difficulty": "Easy",
       "question": "What is the difference between Git and GitHub?",
       "options": [
         "They are the same product",
@@ -630,20 +833,33 @@
     },
     {
       "id": "git-4",
+      "difficulty": "Hard",
       "question": "Which operation rewrites commit hashes by replaying commits onto a new base?",
-      "options": ["merge", "rebase", "clone", "fetch"],
+      "options": [
+        "merge",
+        "rebase",
+        "clone",
+        "fetch"
+      ],
       "answer": 1,
       "explanation": "Rebase replays commits on top of another base, producing a linear history but new hashes. Never rebase a shared branch that others are working on."
     },
     {
       "id": "git-5",
+      "difficulty": "Hard",
       "question": "Which command safely undoes a pushed commit by creating a new commit?",
-      "options": ["git reset --hard", "git revert", "git checkout", "git stash"],
+      "options": [
+        "git reset --hard",
+        "git revert",
+        "git checkout",
+        "git stash"
+      ],
       "answer": 1,
       "explanation": "git revert creates a new commit that reverses the changes of an earlier commit, so shared history is preserved. reset --hard rewrites history and discards work."
     },
     {
       "id": "git-6",
+      "difficulty": "Moderate",
       "question": "What does git stash do?",
       "options": [
         "Deletes the current branch",
@@ -656,6 +872,7 @@
     },
     {
       "id": "git-7",
+      "difficulty": "Moderate",
       "question": "Adding a file to .gitignore affects files that are already tracked how?",
       "options": [
         "They are removed from the repository automatically",
@@ -668,6 +885,7 @@
     },
     {
       "id": "git-8",
+      "difficulty": "Moderate",
       "question": "In git push -u origin main, what is origin?",
       "options": [
         "The first commit",
@@ -680,6 +898,7 @@
     },
     {
       "id": "git-9",
+      "difficulty": "Moderate",
       "question": "What is a pull request?",
       "options": [
         "A Git command that pulls changes",
@@ -692,8 +911,14 @@
     },
     {
       "id": "git-10",
+      "difficulty": "Easy",
       "question": "Which command shows the commit history?",
-      "options": ["git status", "git log", "git diff", "git show-config"],
+      "options": [
+        "git status",
+        "git log",
+        "git diff",
+        "git show-config"
+      ],
       "answer": 1,
       "explanation": "git log lists commits with hashes, authors and messages. git status shows working-tree state, and git diff shows unstaged changes."
     }
@@ -701,6 +926,7 @@
   "backend": [
     {
       "id": "backend-1",
+      "difficulty": "Easy",
       "question": "What is Node.js?",
       "options": [
         "A programming language",
@@ -713,6 +939,7 @@
     },
     {
       "id": "backend-2",
+      "difficulty": "Moderate",
       "question": "What does non-blocking I/O mean in Node.js?",
       "options": [
         "All operations run on multiple JS threads",
@@ -725,13 +952,20 @@
     },
     {
       "id": "backend-3",
+      "difficulty": "Easy",
       "question": "What is the correct signature of Express middleware?",
-      "options": ["(req, res)", "(req, res, next)", "(request, response, error)", "(ctx, next)"],
+      "options": [
+        "(req, res)",
+        "(req, res, next)",
+        "(request, response, error)",
+        "(ctx, next)"
+      ],
       "answer": 1,
       "explanation": "Middleware receives req and res, plus next to pass control to the following middleware. Error handlers are the exception: they take four arguments."
     },
     {
       "id": "backend-4",
+      "difficulty": "Hard",
       "question": "How does Express distinguish an error-handling middleware?",
       "options": [
         "It is placed first",
@@ -744,6 +978,7 @@
     },
     {
       "id": "backend-5",
+      "difficulty": "Moderate",
       "question": "In /users/:id?active=true, where does Express expose the values?",
       "options": [
         "req.body.id and req.body.active",
@@ -756,13 +991,20 @@
     },
     {
       "id": "backend-6",
+      "difficulty": "Easy",
       "question": "Which middleware parses JSON request bodies in Express?",
-      "options": ["express.json()", "express.urlencoded()", "express.static()", "cookieParser()"],
+      "options": [
+        "express.json()",
+        "express.urlencoded()",
+        "express.static()",
+        "cookieParser()"
+      ],
       "answer": 0,
       "explanation": "express.json() parses application/json bodies into req.body. express.urlencoded() handles HTML form submissions."
     },
     {
       "id": "backend-7",
+      "difficulty": "Hard",
       "question": "Which statement about JWT payloads is correct?",
       "options": [
         "They are encrypted and unreadable by clients",
@@ -775,6 +1017,7 @@
     },
     {
       "id": "backend-8",
+      "difficulty": "Easy",
       "question": "Who enforces CORS?",
       "options": [
         "The Node.js server runtime",
@@ -787,6 +1030,7 @@
     },
     {
       "id": "backend-9",
+      "difficulty": "Moderate",
       "question": "Where should production secrets such as database passwords live?",
       "options": [
         "Hard-coded in source files",
@@ -799,6 +1043,7 @@
     },
     {
       "id": "backend-10",
+      "difficulty": "Moderate",
       "question": "Why should you avoid readFileSync inside an Express request handler?",
       "options": [
         "It is deprecated",
@@ -813,6 +1058,7 @@
   "database": [
     {
       "id": "database-1",
+      "difficulty": "Easy",
       "question": "Which is a typical reason to choose a NoSQL database?",
       "options": [
         "You need strict multi-table joins everywhere",
@@ -825,13 +1071,20 @@
     },
     {
       "id": "database-2",
+      "difficulty": "Easy",
       "question": "How does MongoDB store documents internally?",
-      "options": ["CSV rows", "BSON", "XML", "Plain HTML"],
+      "options": [
+        "CSV rows",
+        "BSON",
+        "XML",
+        "Plain HTML"
+      ],
       "answer": 1,
       "explanation": "MongoDB stores documents as BSON, a binary encoding of JSON-like data that supports extra types such as ObjectId and Date."
     },
     {
       "id": "database-3",
+      "difficulty": "Moderate",
       "question": "What is the main purpose of an index?",
       "options": [
         "To enforce that every field is a string",
@@ -844,20 +1097,33 @@
     },
     {
       "id": "database-4",
+      "difficulty": "Easy",
       "question": "What does the A in ACID stand for?",
-      "options": ["Availability", "Atomicity", "Authentication", "Aggregation"],
+      "options": [
+        "Availability",
+        "Atomicity",
+        "Authentication",
+        "Aggregation"
+      ],
       "answer": 1,
       "explanation": "Atomicity guarantees that all statements in a transaction succeed or none do. Consistency, Isolation and Durability complete ACID."
     },
     {
       "id": "database-5",
+      "difficulty": "Easy",
       "question": "Which join returns all rows from the left table, even when there is no match on the right?",
-      "options": ["INNER JOIN", "LEFT JOIN", "CROSS JOIN", "SELF JOIN"],
+      "options": [
+        "INNER JOIN",
+        "LEFT JOIN",
+        "CROSS JOIN",
+        "SELF JOIN"
+      ],
       "answer": 1,
       "explanation": "A LEFT JOIN keeps every row from the left table and fills right-side columns with NULL when no match exists. INNER JOIN keeps only matches."
     },
     {
       "id": "database-6",
+      "difficulty": "Moderate",
       "question": "What is the main goal of database normalisation?",
       "options": [
         "Duplicating data for faster reads",
@@ -870,6 +1136,7 @@
     },
     {
       "id": "database-7",
+      "difficulty": "Hard",
       "question": "What is the N+1 query problem?",
       "options": [
         "Running one query for N rows and then one additional query per row",
@@ -882,6 +1149,7 @@
     },
     {
       "id": "database-8",
+      "difficulty": "Moderate",
       "question": "What is special about the _id field in MongoDB?",
       "options": [
         "It must be a string",
@@ -894,13 +1162,20 @@
     },
     {
       "id": "database-9",
+      "difficulty": "Hard",
       "question": "Which aggregation stage groups documents and computes values such as sums or averages?",
-      "options": ["$match", "$group", "$project", "$unwind"],
+      "options": [
+        "$match",
+        "$group",
+        "$project",
+        "$unwind"
+      ],
       "answer": 1,
       "explanation": "$group groups documents by an expression and computes accumulators such as $sum and $avg. $match filters, $project reshapes and $unwind flattens arrays."
     },
     {
       "id": "database-10",
+      "difficulty": "Moderate",
       "question": "What is Mongoose?",
       "options": [
         "A MongoDB GUI client",
@@ -915,6 +1190,7 @@
   "advanced": [
     {
       "id": "advanced-1",
+      "difficulty": "Easy",
       "question": "What does DNS do when you enter a domain name?",
       "options": [
         "Encrypts the HTTP request",
@@ -927,6 +1203,7 @@
     },
     {
       "id": "advanced-2",
+      "difficulty": "Moderate",
       "question": "What does TLS add to HTTP?",
       "options": [
         "Faster DNS resolution",
@@ -939,13 +1216,20 @@
     },
     {
       "id": "advanced-3",
+      "difficulty": "Easy",
       "question": "A request reaches the server but the resource does not exist. Which status code fits best?",
-      "options": ["200", "301", "404", "500"],
+      "options": [
+        "200",
+        "301",
+        "404",
+        "500"
+      ],
       "answer": 2,
       "explanation": "404 means the server could not find the requested resource. 500 would indicate the server failed while handling a valid request."
     },
     {
       "id": "advanced-4",
+      "difficulty": "Moderate",
       "question": "What is the difference between 401 and 403?",
       "options": [
         "401 means not authenticated; 403 means authenticated but not allowed",
@@ -958,6 +1242,7 @@
     },
     {
       "id": "advanced-5",
+      "difficulty": "Moderate",
       "question": "Which practice best prevents XSS from user-generated content?",
       "options": [
         "Storing the content in localStorage",
@@ -970,6 +1255,7 @@
     },
     {
       "id": "advanced-6",
+      "difficulty": "Hard",
       "question": "Which measure helps prevent CSRF attacks?",
       "options": [
         "SameSite cookies and CSRF tokens",
@@ -982,6 +1268,7 @@
     },
     {
       "id": "advanced-7",
+      "difficulty": "Hard",
       "question": "Which Cache-Control value is ideal for a hashed production asset such as app.3f9c.js?",
       "options": [
         "no-store",
@@ -994,13 +1281,20 @@
     },
     {
       "id": "advanced-8",
+      "difficulty": "Moderate",
       "question": "Which technology provides a full-duplex persistent connection?",
-      "options": ["Short polling", "Server-Sent Events", "WebSockets", "Static HTML"],
+      "options": [
+        "Short polling",
+        "Server-Sent Events",
+        "WebSockets",
+        "Static HTML"
+      ],
       "answer": 2,
       "explanation": "WebSockets allow both client and server to send messages on one long-lived connection. SSE is one-way, server to client."
     },
     {
       "id": "advanced-9",
+      "difficulty": "Easy",
       "question": "What does CI/CD stand for?",
       "options": [
         "Cloud Infrastructure / Cloud Deployment",
@@ -1013,8 +1307,14 @@
     },
     {
       "id": "advanced-10",
+      "difficulty": "Easy",
       "question": "What is the recommended target for Largest Contentful Paint (LCP)?",
-      "options": ["Under 0.1s", "Under 2.5s", "Under 10s", "Under 200ms"],
+      "options": [
+        "Under 0.1s",
+        "Under 2.5s",
+        "Under 10s",
+        "Under 200ms"
+      ],
       "answer": 1,
       "explanation": "Core Web Vitals consider LCP good when it is 2.5 seconds or less. INP should stay under 200ms and CLS under 0.1."
     }

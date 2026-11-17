@@ -1693,6 +1693,14 @@ button:disabled {
   margin-bottom: 14px;
 }
 
+.quiz-card-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
 .quiz-topic-pill {
   display: inline-block;
   max-width: 100%;

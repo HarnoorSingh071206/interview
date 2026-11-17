@@ -106,6 +106,10 @@ export default function QuizResults({
               <header className="review-card-head">
                 <span className="review-index">Q{index + 1}</span>
                 <span className="quiz-topic-pill">{topicNameFor(question.topicId)}</span>
+                <span className={`badge ${question.difficulty.toLowerCase()}`}>
+                  <span className="badge-dot" />
+                  {question.difficulty}
+                </span>
                 <span className={`badge ${isCorrect ? 'easy' : 'hard'}`}>
                   <span className="badge-dot" />
                   {isCorrect ? 'Correct' : 'Incorrect'}

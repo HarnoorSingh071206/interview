@@ -45,7 +45,13 @@ export default function QuizView({
       <div className="quiz-stage">
         <div className="quiz-card">
           <div className="quiz-card-top">
-            <span className="quiz-topic-pill">{topicNameFor(question.topicId)}</span>
+            <div className="quiz-card-tags">
+              <span className="quiz-topic-pill">{topicNameFor(question.topicId)}</span>
+              <span className={`badge ${question.difficulty.toLowerCase()}`}>
+                <span className="badge-dot" />
+                {question.difficulty}
+              </span>
+            </div>
             <span className="quiz-answered-count">
               {answeredCount}/{questions.length} answered
             </span>
